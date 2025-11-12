@@ -1,6 +1,6 @@
-# Air Notepad ✨✍️  
+# Aerosketch ✨✍️  
 
-**Air Notepad** is an experimental project that uses **computer vision** and **machine learning** to let users draw or write on a virtual notepad using **hand gestures** captured through a camera.  
+**Aerosketch** is an experimental project that uses **computer vision** and **machine learning** to let users draw or write on a virtual notepad using **hand gestures** captured through a camera.  
 
 This project is less about app development and more about exploring **gesture recognition**, **real-time ML inference**, and **human-computer interaction** using AI.  
 
@@ -20,8 +20,7 @@ This project is less about app development and more about exploring **gesture re
 ## 🛠️ Tech Stack  
 
 - **Model & Tracking:** MediaPipe Hand Landmarker  
-- **Processing & Visualization:** Python, OpenCV, NumPy  
-- **Prototyping:** Jupyter Notebook (for experimentation and visualization)  
+- **Processing & Visualization:** Python, OpenCV, NumPy   
 - **(Optional UI):** Flutter/Dart – used for demo, not the core focus  
 
 ---
@@ -37,12 +36,6 @@ This project is less about app development and more about exploring **gesture re
 
 ---
 
-
-## 🎥 Demo
-
-[![Air Notepad Demo](https://img.youtube.com/vi/t9qGOTsM9mY/maxresdefault.jpg)](https://youtu.be/t9qGOTsM9mY)
----
-
 ## 🔮 Future Scope  
 
 - Train a lightweight handwriting recognition model on top of stroke data  
@@ -55,9 +48,9 @@ This project is less about app development and more about exploring **gesture re
 ## 📌 How to Run  
 
 ### Install Dependencies  
-git clone https://github.com/your-username/air-notepad.git
-cd airnotepad_handrecog
---In this, run the Jupyter notebook
+git clone https://github.com/your-username/Aerosketch.git
+cd Aerosketch_handrecog
+--In this, run 
 pip install mediapipe, numpy
 
 
