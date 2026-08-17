@@ -38,11 +38,6 @@ This project is less about app development and more about exploring **gesture re
 ---
 
 
-## 🎥 Demo
-
-[![Air Notepad Demo](https://img.youtube.com/vi/t9qGOTsM9mY/maxresdefault.jpg)](https://youtu.be/t9qGOTsM9mY)
----
-
 ## 🔮 Future Scope  
 
 - Train a lightweight handwriting recognition model on top of stroke data  
@@ -51,14 +46,6 @@ This project is less about app development and more about exploring **gesture re
 - Research into **multi-modal AI** combining gesture + voice commands  
 
 ---
-
-## 📌 How to Run  
-
-### Install Dependencies  
-git clone https://github.com/your-username/air-notepad.git
-cd airnotepad_handrecog
---In this, run the Jupyter notebook
-pip install mediapipe, numpy
 
 
 
