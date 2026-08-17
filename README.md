@@ -4,7 +4,7 @@ Draw on screen using nothing but your hand and a webcam. Point your index finger
 draw, raise two fingers to pick a tool, make a fist to lift the pen — no mouse,
 keyboard, or install required.
 
-**[Live demo →](#)** *(add your Vercel URL here)*
+**[https://aerosketch.vercel.app/](#)
 
 ---
 
@@ -31,7 +31,6 @@ this repo, see below) and was rebuilt from the ground up as a standalone web app
 
 ## Run it locally
 
-No build step, no dependencies — it's a static site.
 
 ```bash
 git clone https://github.com/Sangam8168/Aerosketch.git
