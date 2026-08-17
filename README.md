@@ -1,51 +1,73 @@
-# Air Notepad ✨✍️  
+# Aerosketch ✋✍️
 
-**Air Notepad** is an experimental project that uses **computer vision** and **machine learning** to let users draw or write on a virtual notepad using **hand gestures** captured through a camera.  
+Draw on screen using nothing but your hand and a webcam. Point your index finger to
+draw, raise two fingers to pick a tool, make a fist to lift the pen — no mouse,
+keyboard, or install required.
 
-This project is less about app development and more about exploring **gesture recognition**, **real-time ML inference**, and **human-computer interaction** using AI.  
-
----
-
-## 🧠 Core Idea  
-
-- Track hand landmarks using **MediaPipe Hand Landmarker model** (via Hugging Face)  
-- Process the detected keypoints with **OpenCV** and **NumPy**  
-- Convert movements into strokes on a virtual whiteboard  
-- Explore handwriting-to-text possibilities as a next step  
-
-👉 The main focus: understanding how raw landmark data can be transformed into structured signals for drawing and interaction.  
+**[Live demo →](#)** *(add your Vercel URL here)*
 
 ---
 
-## 🛠️ Tech Stack  
+## What it is
 
-- **Model & Tracking:** MediaPipe Hand Landmarker  
-- **Processing & Visualization:** Python, OpenCV, NumPy  
-- **Prototyping:** Jupyter Notebook (for experimentation and visualization)  
-- **(Optional UI):** Flutter/Dart – used for demo, not the core focus  
+Aerosketch is a browser-based, gesture-controlled drawing app. It tracks your hand in
+real time with **MediaPipe Hands**, turns your fingertip into a smoothed, pressure-like
+pen, and renders everything on an HTML canvas — entirely client-side, no server, no
+account, nothing installed on your machine.
 
----
+It started life as a Python/OpenCV prototype exploring hand-landmark tracking (still in
+this repo, see below) and was rebuilt from the ground up as a standalone web app.
 
-## ⚡ Challenges & Learnings  
+## Features
 
-- Figuring out how to preprocess hand landmark data effectively  
-- Handling noise and instability in real-time tracking  
-- Iterating through multiple approaches for smoother stroke rendering  
-- Understanding the gap between ML model outputs and usable application logic  
+- Real-time hand tracking with jitter-smoothed, natural-feeling strokes
+- Gesture controls: point to draw, two fingers to select a tool, fist to lift the pen
+- 7 preset colors + a full custom color picker
+- Adjustable brush size, eraser, mirror/symmetry mode
+- Undo/redo, canvas backgrounds (camera feed, solid, grid paper, dot grid)
+- Autosaves your drawing locally and restores it next visit
+- Export your drawing as a PNG
+- Works with mouse/touch too, if you'd rather not use gestures
 
-💡 Every iteration improved stability and accuracy, giving me hands-on insight into **bridging ML models with real-world applications**.  
+## Run it locally
 
----
+No build step, no dependencies — it's a static site.
 
+```bash
+git clone https://github.com/Sangam8168/Aerosketch.git
+cd Aerosketch
+python3 -m http.server 8000
+```
 
-## 🔮 Future Scope  
+Then open `http://localhost:8000` and click **Open Camera**. (Serving it locally like
+this, rather than opening `index.html` directly, avoids browser camera-permission
+quirks with `file://` pages.)
 
-- Train a lightweight handwriting recognition model on top of stroke data  
-- Extend to a **desktop application** with enhanced accuracy  
-- Add more intuitive gestures (e.g., undo, erase, change color)  
-- Research into **multi-modal AI** combining gesture + voice commands  
+## Tech stack
 
----
+**Web app:** JavaScript, HTML5 Canvas API, [MediaPipe Hands](https://developers.google.com/mediapipe) (loaded as WebAssembly from a CDN)
 
+**Original prototype:** Python, OpenCV, NumPy, MediaPipe
 
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for a full breakdown of how the hand-tracking
+model works and how the app is put together internally.
 
+## Project structure
+
+```
+index.html, styles.css, script.js   The app — markup, styling, and all logic
+aerosketch_handrecog/                Original Python/OpenCV prototype
+AEROSKETCH.ipynb                     Early prototyping notebook
+assets/models/                       Raw MediaPipe model files (.tflite) from an
+                                      earlier native-app iteration
+ARCHITECTURE.md                      Deeper technical writeup
+```
+
+## Future ideas
+
+- Lightweight gesture classifier on top of the existing hand landmarks (e.g. pinch to
+  erase, more tool shortcuts) — see the "do we need to train a model" section in
+  ARCHITECTURE.md for why this is the right next step over touching the tracking model
+  itself
+- Handwriting-to-text on top of captured strokes
+- Multi-hand / collaborative drawing
