@@ -8,6 +8,17 @@ the pen. The shipped product is a single static web app (`index.html` + `styles.
 `script.js`, no backend, no build step). The repo also keeps the earlier Python
 prototyping work that the web app grew out of.
 
+## Tech stack — where each piece is used
+
+| Tech | Used in | What it does here |
+|---|---|---|
+| **MediaPipe Hands** | Both the Python prototype and the web app | The actual hand-tracking model — outputs 21 hand landmarks per frame. Everything else in the project is built on top of its output. |
+| **OpenCV** | Python prototype only (`airnotepad_handrecog/`) | Reads webcam frames (`cv2.VideoCapture`) and renders the preview window (`cv2.imshow`) during early prototyping. |
+| **NumPy** | Python prototype only | Backs the drawing canvas and coordinate/array math in the prototype scripts. |
+| **JavaScript** | Web app (`script.js`) | Everything in the shipped product: loads MediaPipe via WebAssembly in-browser, does gesture detection, point smoothing, canvas rendering, and the DOM-based tool panel — no Python involved. |
+
+The Python prototype and the web app are two separate implementations of the same idea — the prototype proved the concept out with OpenCV/NumPy, and the web app is the browser-native rewrite that actually ships.
+
 ## Repo layout
 
 ```
