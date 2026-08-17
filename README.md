@@ -4,7 +4,7 @@ Draw on screen using nothing but your hand and a webcam. Point your index finger
 draw, raise two fingers to pick a tool, make a fist to lift the pen — no mouse,
 keyboard, or install required.
 
-**[https://aerosketch.vercel.app/](#)
+**[https://aerosketch.vercel.app/]
 
 ---
 
